@@ -49,7 +49,7 @@ plot(y, pred)
 require(PivotalR)
 data("abalone")
 
-abalone.f <- abalone[abalone$sex=="F", -1]
+abalone.f <- abalone[abalone$sex=="M", -1]
 abalone.f <- abalone.f[-which.max(abalone.f$height), ]
 vinereg(whole ~ length + diameter + height, data = abalone.f,
         family_set = "parametric", correction = "AIC")
