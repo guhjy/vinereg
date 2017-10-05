@@ -100,7 +100,7 @@ qdvine <- function(u, alpha, vine) {
         }
         tmp <- t(apply(V2, 3, diag)[-1, ])
     } else {
-        tmp <- u
+        tmp <- u[, 2:1]
     }
 
     ## predict quantile

@@ -78,6 +78,7 @@ vinereg <- function(formula, data, correction = NA, par_1d = list(),
 
     ## estimation and variable selection --------
     for (i in seq_len(d - 1)) {
+        message("size = ", i)
         if (cores > 1) {
             new_fits <- foreach(k = status$remaining_vars + 1, ...) %dopar%
                 xtnd_vine(u[, k], current_fit, ...)
@@ -249,6 +250,7 @@ xtnd_vine <- function(new_var, old_fit, ...) {
     old_fit$vine$pair_copulas[[d - 1]] <- list()
     npars <- 0
     for (i in rev(seq_len(d - 1))) {
+        message("t = ", d - i)
         zr1 <- psobs$direct[i + 1, i, ]
         zr2 <- if (i == d - 1) {
             psobs$direct[i + 1, i + 1, ]
