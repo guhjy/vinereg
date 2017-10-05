@@ -9,6 +9,6 @@ Description:
   parameteric or nonparametric pair-copulas.
 License: GPL-3
 LazyData: TRUE
-Imports: cctools, rvinecopulib, doParallel, parallel, foreach, kdevine
+Imports: cctools, rvinecopulib, doParallel, parallel, foreach, kdevine, PivotalR
 RoxygenNote: 6.0.1
 NeedsCompilation: no

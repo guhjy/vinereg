@@ -44,6 +44,17 @@ pred <- predict(fit, newdata = dat, alpha = 0.5)
 # observed vs predicted
 plot(y, pred)
 
+
+## abalone example
+require(PivotalR)
+data("abalone")
+
+abalone.f <- abalone[abalone$sex=="F", -1]
+abalone.f <- abalone.f[-which.max(abalone.f$height), ]
+vinereg(whole ~ length + diameter + height, data = abalone.f,
+        family_set = "parametric", correction = "AIC")
+
+
 }
 \seealso{
 \code{\link{predict.vinereg}}
