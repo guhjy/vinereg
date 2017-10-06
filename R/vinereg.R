@@ -35,7 +35,7 @@
 #' abalone.f <- abalone[abalone$sex=="M", -1]
 #' abalone.f <- abalone.f[-which.max(abalone.f$height), ]
 #' vinereg(whole ~ length + diameter + height, data = abalone.f,
-#'         family_set = "onepar", correction = "AIC")
+#'         family_set = c("onepar", "t"), correction = "AIC")
 #'
 #'
 #' @seealso \code{\link{predict.vinereg}}
